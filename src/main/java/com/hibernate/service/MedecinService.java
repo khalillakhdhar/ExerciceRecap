@@ -15,6 +15,7 @@ public class MedecinService {
 MedecinRepository medecinRepository;
 public Medecin createMedecin(Medecin m)
 {
+	
 return 	medecinRepository.save(m);
 }
 public List<Medecin> read()
