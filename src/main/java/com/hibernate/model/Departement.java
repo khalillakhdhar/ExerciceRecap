@@ -48,6 +48,26 @@ public void setDescription(String description) {
 }
 
 
+public Departement() {
+	super();
+}
+
+
+public Departement(int id, String titre, String description) {
+	super();
+	this.id = id;
+	this.titre = titre;
+	this.description = description;
+}
+
+
+public Departement(String titre, String description) {
+	super();
+	this.titre = titre;
+	this.description = description;
+}
+
+
 
 
 

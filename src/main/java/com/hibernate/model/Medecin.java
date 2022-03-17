@@ -48,6 +48,23 @@ public Departement getDepartement() {
 public void setDepartement(Departement departement) {
 	this.departement = departement;
 }
+public Medecin() {
+	
+}
+public Medecin(int id, String nom, String prenom, Departement departement) {
+	
+	this.id = id;
+	this.nom = nom;
+	this.prenom = prenom;
+	this.departement = departement;
+}
+public Medecin(String nom, String prenom, Departement departement, List<Lit> lits) {
+	
+	this.nom = nom;
+	this.prenom = prenom;
+	this.departement = departement;
+	this.lits = lits;
+}
 
 
 
