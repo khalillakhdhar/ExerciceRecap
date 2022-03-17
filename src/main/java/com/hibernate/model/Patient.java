@@ -1,5 +1,7 @@
 package com.hibernate.model;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 @Entity
-public class Patient {
+public class Patient  implements Serializable{
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private int id;
@@ -19,7 +21,7 @@ private String password;
 private String gender;
 @Lob
 private String adress;
-@OneToOne(cascade = CascadeType.ALL)
+@OneToOne(cascade = CascadeType.MERGE)
 @JoinColumn(name = "id_lit", referencedColumnName = "id")
 private Lit lit;
 public int getId() {

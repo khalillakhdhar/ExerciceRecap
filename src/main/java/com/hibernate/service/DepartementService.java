@@ -16,7 +16,7 @@ DepartementRepository departementRepository;
 
 public Departement createDepartement(Departement l)
 {
-	return departementRepository.save(l);
+	return departementRepository.save(l);  //
 	
 }
 public List<Departement> readlistDepartement()

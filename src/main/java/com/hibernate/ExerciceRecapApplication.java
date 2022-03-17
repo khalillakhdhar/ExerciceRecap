@@ -33,17 +33,18 @@ LitService litapi;
 
 	@Override
 	public void run(String... args) throws Exception {
-	//	Departement d=new Departement(1,"enfant", "médecine pour les petit 1-14 ans");
+		Departement d=new Departement(1,"enfant", "médecine pour les petit 1-14 ans");
 		//Optional<Departement> d=departementService.finddepartement(1);
 	
-		//Medecin m=new Medecin(2, "jean", "user", d);
-		//departementService.createDepartement(d);
-
-		//medService.createMedecin(m);
 		
+		departementService.createDepartement(d);
+//Departement d=departementService.finddepartement(1).get();
+Medecin m=new Medecin( 0,"jean", "user", d);
+		medService.createMedecin(m);
 		
-		//Lit l=new Lit("enfant","disponible");
-		//litapi.createLit(l);
+		Medecin m1=medService.searchById(2).get();
+		Lit l=new Lit("enfant","disponible",m1);
+		litapi.createLit(l);
 		
 //		List<Medecin> lm=new ArrayList<Medecin>();
 //		lm=medService.read();

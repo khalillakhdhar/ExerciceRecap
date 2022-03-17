@@ -1,5 +1,6 @@
 package com.hibernate.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -11,13 +12,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 @Entity
-public class Medecin {
+public class Medecin implements Serializable {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private int id;
 private String nom;
 private String prenom;
-@OneToOne(cascade = CascadeType.ALL)
+@OneToOne(cascade = CascadeType.MERGE)
 @JoinColumn(name = "departement", referencedColumnName = "titre")
 private Departement departement;
 @OneToMany(mappedBy = "medecin")
